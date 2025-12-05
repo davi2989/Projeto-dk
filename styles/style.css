@@ -1,0 +1,184 @@
+/* ----------------------------
+   ESTILO GERAL
+----------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Suavização de rolagem */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----------------------------
+   NAVBAR
+----------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  transition: background 0.3s ease;
+}
+
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e50914;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #e50914;
+}
+
+/* Menu */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+/* Efeito hover moderno */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #e50914;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Efeito hover de brilho */
+.navbar a:hover {
+  color: #e50914;
+  text-shadow: 0 0 10px #e50914;
+}
+
+/* ----------------------------
+   SEÇÕES
+----------------------------- */
+.secao {
+  padding: 80px 40px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.secao h1,
+.secao h2 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
+
+/* ----------------------------
+   MOCKUPS / IMAGENS
+----------------------------- */
+.mockup {
+  width: 60%;
+  margin: 25px auto;
+  border-radius: 10px;
+  border: 2px solid #e50914;
+  display: block;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mockup:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.7);
+}
+
+/* ----------------------------
+   BIO / SOBRE NÓS
+----------------------------- */
+.bio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+}
+
+.avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 3px solid #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+/* ----------------------------
+   RESPONSIVIDADE
+----------------------------- */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    gap: 12px;
+  }
+
+  .mockup {
+    width: 90%;
+  }
+
+  .bio {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+  }
+}
+.titulo {
+  text-align: left;
+}
+.titulo text { 
+  text-align: left;
+}

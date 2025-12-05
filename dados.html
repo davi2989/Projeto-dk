@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os Dados – Netflix</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Dossiê Netflix</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="logica.html">A Lógica</a></li>
+      <li><a href="dados.html">Os Dados</a></li>
+      <li><a href="visual.html">O Visual</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="secao">
+    <h2>Os Dados — Modelo de Banco</h2>
+    <img src="assets/img/diagrama-projeto.jpeg" class="mockup">
+   <p>As tabelas principais são: <strong>Usuário</strong>, <strong>Título</strong>, <strong>Histórico,</strong> <strong>Recomendação</strong> e <strong>Gênero</strong>.</p>
+
+<p>O Diagrama Entidade-Relacionamento (DER) representa como os dados principais do sistema de recomendação são organizados e conectados.
+Embora a Netflix real utilize uma estrutura muito mais avançada, este modelo foi simplificado para atender às necessidades do trabalho,
+focando apenas na base mínima necessária para gerar recomendações personalizadas.</p>
+
+<p>O DER mostra como as informações são distribuídas e como cada entidade se relaciona com as demais. 
+No modelo criado, trabalhamos com cinco entidades principais:</p>
+
+<p class="titulo"><strong>1. Título:</strong></p>
+<p class="titulo text">Representa os filmes, séries e produções disponíveis no catálogo da plataforma. 
+Cada título pertence a um gênero e pode aparecer no histórico de vários usuários.</p>
+
+<p><strong>2. Gênero:</strong></p>
+<p>Indica a categoria de cada título, como ação, drama, comédia, romance, entre outros. 
+Um único gênero pode estar associado a diversos títulos do catálogo.</p>
+
+<p><strong>3. Usuário:</strong></p>
+<p>Representa cada pessoa que utiliza a plataforma. 
+O usuário possui um histórico de títulos assistidos, além de receber recomendações personalizadas.</p>
+
+<p><strong>4. Histórico:</strong></p>
+<p>Registra todos os títulos que o usuário já assistiu. 
+Ele conecta o usuário aos conteúdos consumidos, permitindo que o sistema entenda suas preferências.</p>
+
+<p><strong>5. Recomendação:</strong></p>
+<p>Mostra quais títulos foram sugeridos aos usuários com base no perfil, comportamento e padrões identificados.
+Cada recomendação liga um usuário a um título que o sistema considera relevante para ele.</p>
+
+  </section>
+</main>
+
+</body>
+</html>
