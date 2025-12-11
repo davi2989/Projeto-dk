@@ -1,24 +1,89 @@
-// Navegação suave entre as seções
-const links = document.querySelectorAll('nav ul li a');
+document.addEventListener("DOMContentLoaded", () => {
 
-links.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const section = document.querySelector(link.getAttribute('href'));
-    section.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+    /* =========================
+       FUNDO ANIMADO (ATRÁS)
+    ========================== */
+    const canvas = document.createElement("canvas");
+    canvas.id = "data-bg";
+    document.documentElement.prepend(canvas);
 
-// Efeito simples de destaque no menu
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
-  let scrollPos = window.scrollY + 200;
+    const ctx = canvas.getContext("2d");
 
-  sections.forEach(sec => {
-    if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
-      links.forEach(a => a.classList.remove('active'));
-      const id = sec.getAttribute('id');
-      document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
-  });
+    resize();
+    window.addEventListener("resize", resize);
+
+    const dots = Array.from({ length: 130 }).map(() => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 0.5,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+    }));
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgba(229,9,20,0.6)";
+
+        dots.forEach(dot => {
+            dot.x += dot.dx;
+            dot.y += dot.dy;
+
+            if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+            if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    /* =========================
+       EFEITO DIGITAÇÃO NO H1
+    ========================== */
+    /* =========================
+      EFEITO DIGITAÇÃO CORRETO
+   ========================= */
+    /* =========================
+   EFEITO DIGITAÇÃO (GLOBAL)
+========================= */
+const h1 = document.querySelector("h1");
+
+if (h1) {
+  const texto = h1.textContent.trim();
+  h1.textContent = "";
+  let i = 0;
+
+  const escrever = setInterval(() => {
+    if (i < texto.length) {
+      h1.textContent += texto[i];
+      i++;
+    } else {
+      clearInterval(escrever);
+    }
+  }, 45);
+}
+
+
+    /* =========================
+       HEADER REATIVO
+    ========================== */
+    window.addEventListener("scroll", () => {
+        const header = document.querySelector(".header");
+        if (!header) return;
+
+        if (scrollY > 40) {
+            header.classList.add("header-ativo");
+        } else {
+            header.classList.remove("header-ativo");
+        }
+    });
+
 });

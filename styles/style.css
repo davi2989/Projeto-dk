@@ -9,7 +9,6 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Suavização de rolagem */
 html {
   scroll-behavior: smooth;
 }
@@ -43,7 +42,6 @@ html {
   text-shadow: 0 0 8px #e50914;
 }
 
-/* Menu */
 .navbar ul {
   display: flex;
   list-style: none;
@@ -60,7 +58,6 @@ html {
   position: relative;
 }
 
-/* Efeito hover moderno */
 .navbar a::after {
   content: "";
   position: absolute;
@@ -76,38 +73,74 @@ html {
   width: 100%;
 }
 
-/* Efeito hover de brilho */
 .navbar a:hover {
   color: #e50914;
   text-shadow: 0 0 10px #e50914;
 }
 
 /* ----------------------------
-   SEÇÕES
+   SEÇÕES / TÍTULOS
 ----------------------------- */
 .secao {
   padding: 80px 40px;
   text-align: center;
-  animation: fadeIn 1s ease forwards;
   opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  animation: fadeSlide 1s ease forwards;
 }
 
 .secao h1,
 .secao h2 {
   font-size: 2.2rem;
   margin-bottom: 18px;
-  color: #ffffff;
   text-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
 }
 
 /* ----------------------------
-   MOCKUPS / IMAGENS
+   HERO CONTENT (TEXTOS)
+----------------------------- */
+.hero-content,
+.texto-card,
+.texto-card2 {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  animation: fadeSlide 1.2s ease forwards;
+  border-left: 4px solid #e50914;
+}
+
+/* Texto-card secundário */
+.texto-card2 {
+  border-left: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 25px 30px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
+}
+
+.texto-card p,
+.texto-card2 p,
+.hero-content p {
+  margin-bottom: 16px;
+}
+
+.texto-card2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+}
+
+/* ----------------------------
+   IMAGENS MOCKUP
 ----------------------------- */
 .mockup {
   width: 60%;
@@ -125,16 +158,16 @@ html {
 }
 
 /* ----------------------------
-   BIO / SOBRE NÓS
+   SOBRE / BIO
 ----------------------------- */
 .bio {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.05);
+  gap: 20px;
+  max-width: 700px;
+  margin: 40px auto;
   padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -145,12 +178,46 @@ html {
   box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
 }
 
+.bio p {
+  line-height: 1.5;
+  max-width: 500px;
+}
+
 .avatar {
   width: 85px;
   height: 85px;
   border-radius: 50%;
   border: 3px solid #e50914;
   box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+/* ----------------------------
+   LOGO IMAGEM
+----------------------------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ----------------------------
+   ÚNICA ANIMAÇÃO FADESLIDE
+----------------------------- */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ----------------------------
@@ -172,13 +239,81 @@ html {
   .bio {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
-    padding: 15px;
+  }
+
+  .hero-content,
+  .texto-card,
+  .texto-card2 {
+    padding: 22px;
+    font-size: 1rem;
+  }
+
+  .logo-img {
+    height: 55px;
   }
 }
-.titulo {
-  text-align: left;
+/* ----------------------------
+   ANIMAÇÃO AO PASSAR O MOUSE
+   PARA TODAS AS CAIXAS DE TEXTO
+----------------------------- */
+
+.hero-content,
+.texto-card,
+.texto-card2 {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
 }
-.titulo text { 
-  text-align: left;
+
+.hero-content:hover,
+.texto-card:hover,
+.texto-card2:hover {
+  transform: translateY(-8px);   /* movimento suave para cima */
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.45);   /* brilho Netflix */
+}
+
+
+.hero-content:hover,
+.texto-card:hover,
+.texto-card2:hover {
+  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.55),
+              0 0 25px rgba(229, 9, 20, 0.35) inset;
+}
+/* -----------------------------------------
+   CARD 3 – ESTILO PADRÃO
+------------------------------------------ */
+.texto-card3 {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #e50914;
+  border-radius: 12px;
+  text-align: justify;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+
+  opacity: 0;
+  animation: fadeSlide 1.2s ease forwards;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover animado */
+.texto-card3:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.35);
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .texto-card3 {
+    padding: 22px;
+    font-size: 0.98rem;
+  }
 }
