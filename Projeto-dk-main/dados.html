@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os Dados – Dossiê Netflix</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<script src="scripts/main.js" defer></script>
+
+<body>
+
+<header class="header">
+  <nav class="navbar">
+    <div class="brand">
+  <img src="assets/logo.png" alt="Logo da empresa" class="logo-img">
+  <span class="logo-text">Dossiê Netflix</span>
+</div>
+
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="logica.html">A Lógica</a></li>
+      <li><a href="dados.html" class="active">Os Dados</a></li>
+      <li><a href="visual.html">O Visual</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content">
+
+  <section class="secao fade-in">
+
+    <h1>Estrutura de Dados e Modelo de Banco</h1>
+
+    <p class="texto-destaque-dados">
+      Esta seção apresenta o modelo simplificado de armazenamento de dados utilizado para simular o funcionamento do sistema de recomendação da Netflix dentro do escopo acadêmico do projeto.
+    </p>
+
+    <!-- Diagrama -->
+    <img src="assets/img/diagrama-projeto.jpeg" alt="Diagrama Entidade Relacionamento" class="mockup">
+   
+   <div class="texto-card2">
+  <p>
+    O Diagrama Entidade-Relacionamento (DER) demonstra como as informações fundamentais do sistema são 
+    organizadas e conectadas. Embora a infraestrutura real da Netflix seja muito mais complexa, este 
+    modelo foi desenvolvido de forma simplificada, focando apenas nos elementos essenciais para a 
+    personalização de recomendações.
+  </p>
+
+  <p>
+    As principais entidades do modelo são:
+  </p>
+
+  <p><strong>1. Usuário:</strong> armazena informações básicas sobre cada perfil, como identificação e preferências gerais.</p>
+
+  <p><strong>2. Conteúdo:</strong> representa os filmes, séries e demais títulos disponíveis no catálogo da plataforma.</p>
+
+  <p><strong>3. Histórico:</strong> registra as interações do usuário com os conteúdos, incluindo datas, horários e tempo assistido.</p>
+
+  <p><strong>4. Sugestão:</strong> conecta usuários a conteúdos sugeridos com base em seus padrões de consumo e comportamento.</p>
+
+  <p>
+    Essa estrutura permite que o sistema identifique padrões, relacione preferências e gere sugestões 
+    personalizadas de maneira lógica e eficiente.
+  </p>
+</div>
+
+   
+  </section>
+
+</main>
+
+</body>
+</html>
