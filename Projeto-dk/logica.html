@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Lógica – Dossiê Netflix</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<script src="scripts/main.js" defer></script>
+
+<body>
+
+<header class="header">
+  <nav class="navbar">
+   <div class="brand">
+  <img src="assets/logo.png" alt="Logo da empresa" class="logo-img">
+  <span class="logo-text">Dossiê Netflix</span>
+</div>
+
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="logica.html" class="active">A Lógica</a></li>
+      <li><a href="dados.html">Os Dados</a></li>
+      <li><a href="visual.html">O Visual</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content">
+
+  <section class="secao fade-in">
+
+    <h1>Lógica do Sistema de Recomendação</h1>
+
+    <p class="texto-destaque">
+      O fluxo lógico do sistema de recomendação da Netflix é baseado na análise contínua do comportamento do usuário, combinando dados históricos, padrões de consumo e similaridade entre conteúdos.
+    </p>
+
+    <!-- Área de imagem do fluxograma -->
+    <img src="assets/fluxograma.png" alt="Fluxograma do algoritmo" class="mockup">
+<div class="texto-card">
+  <p>
+    O sistema começa identificando qual perfil está usando a plataforma, já que cada usuário possui preferências próprias. 
+    Depois, ele analisa o histórico de consumo: se o usuário já assistiu muitos títulos, esse histórico serve de base principal; 
+    se não, a Netflix usa popularidade geral e tendências do país como referência inicial.
+  </p>
+
+  <p>
+    Em seguida, o algoritmo observa o comportamento do usuário, como tempo assistido, gêneros favoritos, atores preferidos, 
+    horários de acesso e se costuma maratonar. Se o usuário abandonar rapidamente um conteúdo, esse tipo perde prioridade nas próximas recomendações.
+  </p>
+
+  <p>
+    O sistema também compara o perfil com outros usuários semelhantes. Quando pessoas com gostos parecidos apreciam um conteúdo 
+    que o usuário ainda não viu, esse título recebe maior pontuação para ser recomendado.
+  </p>
+
+  <p>
+    A Netflix analisa também os metadados de cada filme e série — tags como “comédia leve”, “ação rápida”, “drama policial”, 
+    etc. Se essas tags combinam com o que o usuário costuma assistir, o título sobe no ranking de relevância.
+  </p>
+
+  <p>
+    O contexto de uso também influencia: à noite, a plataforma tende a sugerir conteúdos mais longos; no celular, recomenda 
+    episódios mais curtos e dinâmicos.
+  </p>
+
+  <p>
+    Com todos esses dados, o algoritmo calcula uma pontuação personalizada para cada título e define quais aparecem primeiro 
+    na tela inicial. Por fim, a Netflix escolhe automaticamente a capa mais atrativa para o usuário, destacando romance, ação 
+    ou outros elementos conforme o perfil. A lista final é exibida na Home, e cada ação do usuário recalcula todo o processo continuamente.
+  </p>
+</div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
