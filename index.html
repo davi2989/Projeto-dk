@@ -33,24 +33,58 @@
 
   <main class="main-content">
 
-    <section class="hero secao fade-in">
+   <section class="hero secao fade-in">
+
+     <h1 class="titulo-fora">Sistema de Recomendação da Netflix</h1>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titulo = document.querySelector(".titulo-fora");
+
+  console.log("título encontrado?", titulo); // diagnóstico
+
+  setTimeout(() => {
+    titulo.classList.add("titulo-ativo");
+  }, 100);
+});
+</script>
+
+<style>
+.titulo-fora {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(-25px);
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.titulo-ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+      <!-- CARD DE TEXTO -->
       <div class="hero-content">
-        <h1>Sistema de Recomendação da Netflix</h1>
 
         <p class="texto-destaque">
-            Este dossiê digital apresenta uma análise conceitual do funcionamento do sistema de recomendação da Netflix,
+          Este dossiê digital apresenta uma análise conceitual do funcionamento do sistema de recomendação da Netflix,
           revelando como a plataforma personaliza conteúdos para milhões de usuários em tempo real.
         </p>
 
         <p>
-            O algoritmo da Netflix é considerado um dos mais sofisticados do mundo. O sistema de recomendações da Netflix
+          O algoritmo da Netflix é considerado um dos mais sofisticados do mundo. O sistema de recomendações da Netflix
           utiliza fortemente o princípio da recompensa variável: toda vez que o usuário entra na plataforma, encontra
           novas sugestões personalizadas, o que ativa a curiosidade e o mecanismo de vício semelhante ao de redes
           sociais e jogos. Como o usuário nunca sabe qual série “perfeita” vai aparecer, ele tende a navegar mais e
           retornar com maior frequência. Além disso, o uso de listas como “Top 10”, “Em alta” e “Tendências” explora o
           FOMO (medo de ficar por fora), reforçando o desejo de acompanhar o que “todo mundo está vendo”.
           <br><br>
-            A plataforma também reduz a ansiedade de escolha ao filtrar opções com base no comportamento do usuário,
+          A plataforma também reduz a ansiedade de escolha ao filtrar opções com base no comportamento do usuário,
           gerando sensação de conforto, economia de tempo e confiança no algoritmo. Tudo isso cria uma experiência
           fluida e personalizada, que facilita tanto a decisão que pode levar a uma leve dependência: o usuário passa a
           preferir que a Netflix escolha por ele. Assim, o sistema não apenas recomenda conteúdos, mas mantém o público
@@ -58,10 +92,13 @@
         </p>
 
         <p>
-           Através deste site, você irá explorar como esses mecanismos funcionam nos bastidores e entender como a
+          Através deste site, você irá explorar como esses mecanismos funcionam nos bastidores e entender como a
           tecnologia transforma dados em escolhas personalizadas.
         </p>
+
       </div>
+</section>
+
 
       <!-- Área preparada para imagem futuramente -->
       <div class="hero-image placeholder-img"></div>

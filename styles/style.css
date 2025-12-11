@@ -96,31 +96,35 @@ html {
 }
 
 /* ----------------------------
-   HERO CONTENT (TEXTOS)
+   ANIMAÇÃO AO PASSAR O MOUSE
+   PARA TODAS AS CAIXAS DE TEXTO
 ----------------------------- */
 .hero-content,
 .texto-card,
-.texto-card2 {
+.texto-card2,
+.texto-card3,
+.texto-destaque3,
+.card {
   max-width: 950px;
   margin: 40px auto;
   padding: 30px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   text-align: justify;
   line-height: 1.7;
   font-size: 1.08rem;
-  color: #ffffff;
   letter-spacing: 0.3px;
   word-spacing: 1px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
+  color: #ffffff;
   backdrop-filter: blur(6px);
-
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
   opacity: 0;
   animation: fadeSlide 1.2s ease forwards;
-  border-left: 4px solid #e50914;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
 }
 
-/* Texto-card secundário */
+/* Ajustes específicos para alguns cards */
 .texto-card2 {
   border-left: none;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -128,20 +132,98 @@ html {
   box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
 }
 
-.texto-card p,
-.texto-card2 p,
-.hero-content p {
-  margin-bottom: 16px;
+.texto-card3 {
+  border-left: 4px solid #e50914;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
 }
 
+.card {
+  border-left: 4px solid #e50914;
+}
+
+.texto-destaque3 {
+  border-left: 4px solid #e50914;
+}
+
+/* Hover effects */
+.hero-content:hover,
+.texto-card:hover,
+.texto-card2:hover,
+.texto-card3:hover,
+.texto-destaque3:hover,
+.card:hover {
+  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.55),
+    0 0 25px rgba(229, 9, 20, 0.35) inset;
+}
+
+/* Transição inicial hover para suavizar */
+.hero-content:hover,
+.texto-card:hover,
 .texto-card2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+  transform: translateY(-8px); /* para suavidade inicial */
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.45);
+}
+
+/* Exceção hover leve para texto-destaque3 (sem rotação) */
+.texto-destaque3:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.35);
 }
 
 /* ----------------------------
-   IMAGENS MOCKUP
+   TEXTOS DENTRO DOS CARDS
 ----------------------------- */
+.hero-content p,
+.texto-card p,
+.texto-card2 p {
+  margin-bottom: 16px;
+}
+
+/* ----------------------------
+   RESPONSIVIDADE
+----------------------------- */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    gap: 12px;
+  }
+
+  .mockup {
+    width: 90%;
+  }
+
+  .bio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content,
+  .texto-card,
+  .texto-card2,
+  .texto-card3,
+  .texto-destaque3,
+  .card {
+    padding: 22px;
+    font-size: 1rem;
+  }
+
+  .logo-img {
+    height: 55px;
+  }
+}
+
+/* ----------------------------
+   OUTROS ESTILOS MANTIDOS
+----------------------------- */
+
+/* Mockup */
 .mockup {
   width: 60%;
   margin: 25px auto;
@@ -157,9 +239,7 @@ html {
   box-shadow: 0 0 35px rgba(229, 9, 20, 0.7);
 }
 
-/* ----------------------------
-   SOBRE / BIO
------------------------------ */
+/* Bio */
 .bio {
   display: flex;
   align-items: center;
@@ -191,9 +271,7 @@ html {
   box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
 }
 
-/* ----------------------------
-   LOGO IMAGEM
------------------------------ */
+/* Logo Imagem */
 .brand {
   display: flex;
   align-items: center;
@@ -206,9 +284,7 @@ html {
   object-fit: contain;
 }
 
-/* ----------------------------
-   ÚNICA ANIMAÇÃO FADESLIDE
------------------------------ */
+/* Animação fadeSlide */
 @keyframes fadeSlide {
   from {
     opacity: 0;
@@ -220,100 +296,179 @@ html {
   }
 }
 
-/* ----------------------------
-   RESPONSIVIDADE
------------------------------ */
-@media (max-width: 700px) {
-  .navbar {
-    padding: 15px 20px;
-  }
+/* Título fora */
+.titulo-fora {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0; /* começa invisível */
+  transform: translateY(-25px);
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
 
-  .navbar ul {
-    gap: 12px;
-  }
+/* Texto destaque simples */
+.texto-destaque {
+  font-weight: 600;
+  text-align: justify;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  color: #ffffff;
+}
 
-  .mockup {
-    width: 90%;
-  }
-
-  .bio {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-content,
-  .texto-card,
-  .texto-card2 {
-    padding: 22px;
-    font-size: 1rem;
-  }
-
-  .logo-img {
-    height: 55px;
-  }
+/* Padrao texto */
+.padrao {
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 /* ----------------------------
-   ANIMAÇÃO AO PASSAR O MOUSE
-   PARA TODAS AS CAIXAS DE TEXTO
+   CARDS DE TEXTO - ESTILOS BASE AGRUPADOS
 ----------------------------- */
-
 .hero-content,
 .texto-card,
-.texto-card2 {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: default;
-}
-
-.hero-content:hover,
-.texto-card:hover,
-.texto-card2:hover {
-  transform: translateY(-8px);   /* movimento suave para cima */
-  box-shadow: 0 0 35px rgba(229, 9, 20, 0.45);   /* brilho Netflix */
-}
-
-
-.hero-content:hover,
-.texto-card:hover,
-.texto-card2:hover {
-  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
-  box-shadow: 0 0 40px rgba(229, 9, 20, 0.55),
-              0 0 25px rgba(229, 9, 20, 0.35) inset;
-}
-/* -----------------------------------------
-   CARD 3 – ESTILO PADRÃO
------------------------------------------- */
-.texto-card3 {
-  max-width: 900px;
+.texto-card2,
+.texto-card3,
+.texto-destaque3,
+.card,
+.texto-destaque-dados {
+   max-width: 950px;
   margin: 40px auto;
-  padding: 25px 30px;
+  padding: 30px 35px;
   background: rgba(255, 255, 255, 0.05);
   border-left: 4px solid #e50914;
   border-radius: 12px;
   text-align: justify;
-  line-height: 1.65;
-  font-size: 1.05rem;
+  line-height: 1.7;
+  font-size: 1.08rem;
   letter-spacing: 0.3px;
   word-spacing: 1px;
   color: #ffffff;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
-
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
   opacity: 0;
   animation: fadeSlide 1.2s ease forwards;
-
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+ 
 }
 
-/* Hover animado */
-.texto-card3:hover {
+/* Ajustes específicos para alguns cards */
+.texto-card2 {
+  border-left: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 25px 30px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
+}
+
+.texto-card3,
+.texto-destaque3,
+.card {
+  border-left: 4px solid #e50914;
+}
+
+.texto-card3 {
+  line-height: 1.65;
+  font-size: 1.05rem;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+/* Hover effects */
+.hero-content:hover,
+.texto-card:hover,
+.texto-card2:hover,
+.texto-card3:hover,
+.texto-destaque3:hover,
+.card:hover,
+.texto-destaque-dados:hover {
+  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.55),
+    0 0 25px rgba(229, 9, 20, 0.35) inset;
+}
+
+/* Hover leve para texto-destaque3 (sem rotação) */
+.texto-destaque3:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.35);
+}
+
+/* Hover inicial para suavidade */
+.hero-content:hover,
+.texto-card:hover,
+.texto-card2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.45);
+}
+.texto-destaque-visual {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #e50914;
+  border-radius: 12px;
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
+  opacity: 0;
+  animation: fadeSlide 1.2s ease forwards;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+}
+
+.texto-destaque-visual:hover {
+  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.55),
+    0 0 25px rgba(229, 9, 20, 0.35) inset;
+}
+.texto-destaque-logica{
+   max-width: 950px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #e50914;
+  border-radius: 12px;
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
+  opacity: 0;
+  animation: fadeSlide 1.2s ease forwards;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default; 
+}
+.texto-destaque-logica:hover{
+   transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.55),
+    0 0 25px rgba(229, 9, 20, 0.35) inset;
+}
+.mockup {
+  max-width: 50%;          /* Diminui a largura máxima da imagem */
+  height: auto;            /* Mantém a proporção da imagem */
+  margin: 25px auto;
+  border-radius: 10px;
+  border: 2px solid #e50914;
+  display: block;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;  /* Inclui a borda no tamanho total */
+}
+
+.mockup:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(229, 9, 20, 0.35);
-}
-
-/* Responsividade */
-@media (max-width: 700px) {
-  .texto-card3 {
-    padding: 22px;
-    font-size: 0.98rem;
-  }
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.7);
 }
